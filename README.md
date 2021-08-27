@@ -62,3 +62,7 @@ resource "aws_instance" "web" {
   }
 }
 ```
+
+Based on an example from [Terraform in Action](https://www.manning.com/books/terraform-in-action).
+
+Uses the [wait-for-endpoint.sh](https://github.com/cec/wait-for-endpoint/blob/master/wait-for-endpoint.sh) shell script.
