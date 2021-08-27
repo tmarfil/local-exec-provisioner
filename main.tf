@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.f5_management.id]
   tags = {
-    Name = "marfil-test"
+    Name = "local-exec-test"
   }
 
   user_data = <<-EOF
