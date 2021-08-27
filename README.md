@@ -31,7 +31,7 @@ aws_instance.web: Creation complete after 33s [id=i-015ff25ee2df7ba9f]
 - Terraform creates aws_instance "web" and assigns public IP to aws_instance "web".
 - local-exec provisioner is a part of the aws_instance "web" resource and runs the ./wait-for-endpoint.sh shell script against the public ip address assigned to aws_instance "web".
 - **wait-for-endpoint.sh** either:
-  - receives a successful http 200 response code, then Terraform maks the resource "created" or...
+  - receives a successful http 200 response code, then Terraform marks the resource "created" or...
   - times out and Terraform fails
 
 **Below is the relevant snippet from _main.tf._**
