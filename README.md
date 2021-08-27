@@ -1,9 +1,9 @@
 # Terraform local-exec provisioner to check if web service is ready.
 
-- The Terraform local-exec provisioner can be used to delay when Terraform marks a resource created until _after_ the resource passes a health check.
+- The Terraform local-exec provisioner can be used to delay when Terraform marks a resource created until _after_ the resource has passed a health check.
 - In this example, the health check is a user defined shell script **wait-for-endpoint.sh**.
 
-# Test the example.
+## Test the example.
 
 Clone this repo and change into the working directory.
 ```
@@ -62,6 +62,13 @@ resource "aws_instance" "web" {
   }
 }
 ```
+To simulate a failed health check, run the wait-for-endpoint.sh script against a bogus url with a short timeout.
+
+```
+command = "./wait-for-endpoint.sh http://too.much.fail.biz -t 15"
+```
+
+## Citations
 
 Based on an example from [Terraform in Action](https://www.manning.com/books/terraform-in-action).
 
